@@ -32,16 +32,12 @@ def test_complete_practice_form():
 
     with allure.step("Открываем страницу регистрации"):
         registration_page.open()
-        attach.add_screenshot(browser)
 
     # WHEN
     with allure.step("Заполняем и отправляем регистрационную форму"):
         registration_page.register(user)
-        attach.add_screenshot(browser)
 
     # THEN
     with allure.step("Проверяем, что пользователь зарегистрирован"):
         registration_page.user_should_registered(user)
-    attach.add_logs(browser)
-    attach.add_html(browser)
-    attach.add_video(browser)
+
